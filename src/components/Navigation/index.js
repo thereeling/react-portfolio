@@ -1,4 +1,5 @@
 import React from 'react';
+import StyledH1 from '../StylingComponents/StyledH1';
 
 
 const Nav = (props) => {
@@ -7,7 +8,7 @@ const Nav = (props) => {
     return (
         <nav className='nav-extended'>
             <div className='nav-wrapper'>
-                <h1 className='brand-logo center'>Hello! I'm Nick Giuliani</h1>
+                <StyledH1 className='brand-logo center'>Hello! I'm Nick Giuliani</StyledH1>
                 <ul className='right hide-on-med-and-down'>
                     {tabs.map(tab => (
                         <li key={tab}>
