@@ -1,32 +1,39 @@
 import React from 'react';
 import StyledH1 from '../StylingComponents/StyledH1';
-
+import StyledNav from '../StylingComponents/StyledNav';
+import StyledNavLink from '../StylingComponents/StyledNavLink';
 
 const Nav = (props) => {
+
+    
     const tabs = ['About', 'Portfolio', 'Contact', 'Resume'];
 
     return (
-        <nav className='nav-extended'>
+        <StyledNav className='nav-extended'>
             <div className='nav-wrapper'>
-                <StyledH1 className='brand-logo center'>Hello! I'm Nick Giuliani</StyledH1>
+                <StyledH1 className='brand-logo'>Hello! I'm Nick Giuliani</StyledH1>
                 <ul className='right hide-on-med-and-down'>
                     {tabs.map(tab => (
-                        <li key={tab}>
-                            <a
+                        <li 
+                        className={props.currentPage === tab ? 'active' : null } 
+                        style={props.currentPage === tab ? {backgroundColor: 'var(--red)'} : null}
+                        key={tab}>
+                            <StyledNavLink
                             href={'#' + tab.toLowerCase()}
-                            onClick={() => props.handlePageChange(tab)}
+                            onClick={() =>
+                                props.handlePageChange(tab)}
                             >
                             {tab}
-                            </a>
+                            </StyledNavLink>
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className='nav-content center'>
+            <div className='nav-content'>
                 <span className='nav-title'>Web Developer</span>
             </div>
 
-    </nav>
+    </StyledNav>
     )
 }
 

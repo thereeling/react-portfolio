@@ -6,7 +6,7 @@ const Header = (props) => {
 
     return (
         <header>
-        <Nav handlePageChange={props.handlePageChange}/>
+        <Nav currentPage={props.currentPage} handlePageChange={props.handlePageChange}/>
         </header>
     )
 
