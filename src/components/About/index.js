@@ -6,10 +6,9 @@ const About = () => {
         <div className='row'>
             <div className='col s12'>
                 <h3 className='header'>About Me <span><img src='/favicon.ico' alt='aboutIcon'></img></span></h3>
-           
-            <div style={{backgroundColor: 'var(--dark-gray)'}} className='card horizontal'>
+            <div style={{backgroundColor: 'var(--dark-gray)'}} className='card-panel'>
                 <div className='card-image'>
-                    <StyledAvatar className='circle responsive-img' src='/assets/images/Headshot.jpeg' alt='avatar'></StyledAvatar>
+                    <StyledAvatar className='responsive-img' src='/assets/images/Headshot.jpeg' alt='avatar'></StyledAvatar>
                 </div>
                 <div className='card-stacked'>
                     <div className='card-content'>
