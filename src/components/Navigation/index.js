@@ -41,10 +41,20 @@ export const Nav = (props) => {
              </StyledNav>
              </div>
             <ul className="sidenav" id="slide-out">
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#resume">Resume</a></li>
+            {tabs.map(tab => (
+                <li 
+                className={props.currentPage === tab ? 'active' : null } 
+                style={props.currentPage === tab ? {borderBottom: '2px solid var(--red)'} : null}
+                key={tab}>
+                    <a
+                    href={'#' + tab.toLowerCase()}
+                    onClick={() =>
+                        props.handlePageChange(tab)}
+                    >
+                    {tab}
+                    </a>
+                </li>
+            ))}
             </ul>                          
     </div>
     )
