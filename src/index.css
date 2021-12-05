@@ -25,3 +25,8 @@ code {
   color: var(--light-gray) !important;
 }
 
+.card {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
