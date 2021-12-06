@@ -1,5 +1,4 @@
 import React from 'react'
-import StyledTechCard from '../StylingComponents/StyledTechCard'
 
 const Resume = () => {
     return (
