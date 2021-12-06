@@ -6,7 +6,7 @@ const Portfolio = () => {
     const [projectsList, setProjectsList] = useState(projects);
     return (
         <div className='row'>
-            <h3 className='header'>Portfolio <span><img src='/favicon.ico' alt='aboutIcon'></img></span></h3>
+            <h3 className='header'>Portfolio <span><img src='/assets/images/red.ico' alt='Red Monster'></img></span></h3>
             {projectsList.map(project => (
                 <Project
                 id={project.id}
