@@ -4,6 +4,7 @@ import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -24,13 +25,16 @@ function App() {
     }
   };
   return (
-    <div>
+    <div className='page-container'>
+    <div className='content-wrap'>
       <Header currentPage={currentPage} handlePageChange={handlePageChange}/>
-      <div className='container'>
+      <main className='container'>
         {
           renderPage()
         }
-      </div>
+      </main>
+    </div>
+      <Footer />
     </div>  
 
   );
