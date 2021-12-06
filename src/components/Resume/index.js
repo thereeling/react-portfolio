@@ -1,4 +1,5 @@
 import React from 'react'
+import StyledTechCard from '../StylingComponents/StyledTechCard'
 
 const Resume = () => {
     return (
@@ -13,8 +14,8 @@ const Resume = () => {
             </div>
             <div className='row'>
             <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="card grey darken-3">
+                    <div class="card-content">
                         <span class="card-title">Front-End </span>
                         <img src="https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=for-the-badge" alt="React Badge"/>
                         <img src="https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge" alt="HTML5 Badge"/>
@@ -26,8 +27,8 @@ const Resume = () => {
                 </div>    
             </div>
             <div class="col s12 m6">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="card #424242 grey darken-3">
+                    <div class="card-content">
                         <span class="card-title">Back-End </span>
                         <img src="https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white&style=for-the-badge" alt="Node Badge"/>
                         <img src="https://img.shields.io/badge/-Express.js-000000?logo=express&logoColor=white&style=for-the-badge" alt="Express Badge"/>
