@@ -12,7 +12,7 @@ export const Nav = (props) => {
     useEffect(() => {
         var elems = document.querySelectorAll('.sidenav');
         M.Sidenav.init(elems, {});     
-    }, []) 
+    }, [M.Sidenav]) 
 
     return (
         <div>

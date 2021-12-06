@@ -12,10 +12,10 @@ const Resume = () => {
                 <h4 className='col s12'>Technologies</h4>
             </div>
             <div className='row'>
-            <div class="col s12 m6">
-                <div class="card grey darken-3">
-                    <div class="card-content">
-                        <span class="card-title">Front-End </span>
+            <div className="col s12 m6">
+                <div className="card grey darken-3">
+                    <div className="card-content">
+                        <span className="card-title">Front-End </span>
                         <img src="https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=for-the-badge" alt="React Badge"/>
                         <img src="https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge" alt="HTML5 Badge"/>
                         <img src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge" alt="CSS3 Badge"/>
@@ -25,10 +25,10 @@ const Resume = () => {
                     </div>
                 </div>    
             </div>
-            <div class="col s12 m6">
-                <div class="card #424242 grey darken-3">
-                    <div class="card-content">
-                        <span class="card-title">Back-End </span>
+            <div className="col s12 m6">
+                <div className="card #424242 grey darken-3">
+                    <div className="card-content">
+                        <span className="card-title">Back-End </span>
                         <img src="https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white&style=for-the-badge" alt="Node Badge"/>
                         <img src="https://img.shields.io/badge/-Express.js-000000?logo=express&logoColor=white&style=for-the-badge" alt="Express Badge"/>
                         <img src="https://img.shields.io/badge/-MongoDB-47A248?logo=mongodb&logoColor=white&style=for-the-badge" alt="MongoDB Badge"/>
