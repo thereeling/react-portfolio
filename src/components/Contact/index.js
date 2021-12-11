@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { validateEmail } from '../../utils/helpers';
+import blue from '../../assets/images/blue.ico'
 
 const Contact = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -36,7 +37,7 @@ const Contact = () => {
 
     return (
         <div className="row">
-        <h3 className='header'>Contact <span><img src='/assets/images/blue.ico' alt='Blue Monster'></img></span></h3>
+        <h3 className='header'>Contact <span><img src={blue} alt='Blue Monster'></img></span></h3>
         <form className="col s12" onSubmit={handleSubmit}>
           <div className="row">
             <div className="input-field col s12 m6 l6">

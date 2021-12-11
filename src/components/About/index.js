@@ -1,14 +1,16 @@
 import React from 'react'
 import StyledAvatar from '../StylingComponents/StyledAvatar'
+import gray from '../../assets/images/gray.ico'
+import Headshot from '../../assets/images/Headshot.jpeg'
 
 const About = () => {
     return (
         <div className='row'>
             <div className='col s12'>
-                <h3 className='header'>About Me <span><img src='/assets/images/gray.ico' alt='Gray Monster'></img></span></h3>
+                <h3 className='header'>About Me <span><img src={gray} alt='Gray Monster'></img></span></h3>
             <div style={{backgroundColor: 'var(--dark-gray)'}} className='card-panel'>
                 <div className='card-image center-align'>
-                    <StyledAvatar className='responsive-img' src='/assets/images/Headshot.jpeg' alt='avatar'></StyledAvatar>
+                    <StyledAvatar className='responsive-img' src={Headshot} alt='avatar'></StyledAvatar>
                 </div>
                 <div className='card-stacked'>
                     <div className='card-content'>

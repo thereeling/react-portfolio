@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Gift Buddy",
-        "image": "/assets/images/GiftBuddy_screen.png",
+        "image": "GiftBuddy_screen.png",
         "description": "Full-Stack web application for performing CRUD operations on your gift ideas!",
         "github": "https://github.com/thereeling/GiftBuddy",
         "deploy": "https://giftbuddy-project2.herokuapp.com/"
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "name": "YaFoodle",
-        "image": "/assets/images/Yafoodle_screen.PNG",
+        "image": "Yafoodle_screen.PNG",
         "description": "Front end web application using third party API's to find meal ideas!",
         "github": "https://github.com/MarkCyg/Yafoodle",
         "deploy": "https://markcyg.github.io/Yafoodle/"
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "name": "Budget Tracker",
-        "image": "/assets/images/BudgetTracker_screen.PNG",
+        "image": "BudgetTracker_screen.PNG",
         "description": "Front end web app for tracking your set budget.  This is a PWA.",
         "github": "https://github.com/thereeling/budget_tracker",
         "deploy": "https://budget-tracker-wk19.herokuapp.com/"

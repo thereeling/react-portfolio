@@ -6,7 +6,7 @@ const Project = (props) => {
         <div className='col s12 m4 l4'>
         <div className="card hoverable grey darken-3">
             <div className="card-image waves-effect waves-block waves-light">
-                <img className="activator responsive-img" alt={props.name} src={props.image}/>
+                <img className="activator responsive-img" alt={props.name} src={require(`../../assets/images/${props.image}`).default}/>
             </div>
             <div className="card-content">
                 <span className="card-title activator">{props.name}<i className="material-icons right">more_vert</i></span>

@@ -1,9 +1,10 @@
 import React from 'react'
+import gray from '../../assets/images/gray.ico'
 
 const Resume = () => {
     return (
         <div className='row'>
-            <h3 className='header'>Resume <span><img src='/favicon.ico' alt='aboutIcon'></img></span></h3>
+            <h3 className='header'>Resume <span><img src={gray} alt='aboutIcon'></img></span></h3>
             <div className='row'>
                 <h5 className='col s12'>Google Docs link to view and download my resume: <a href='https://docs.google.com/document/d/1VntSbXwSb2nkEYapGG4sixWBBTlEIUYb_SMbXOSnd_w/edit?usp=sharing' target='_blank' rel='noreferrer'>Resume</a></h5>
             </div>
