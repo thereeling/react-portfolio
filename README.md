@@ -8,7 +8,7 @@ This project is a personal Web Developer portfolio of mine using the React Libra
  
 ## Usage 
 
-To view my portfolio, visit this link: 
+To view my portfolio, visit this link: http://thereeling.github.io/react-portfolio
 
 ## Credits 
 
