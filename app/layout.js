@@ -1,5 +1,7 @@
+import { Header } from "@/components/Header";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Darkmode } from "@/components/Darkmode";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-background dark:bg-background`}>{children}</body>
+      <body
+        className={`${inter.className} bg-background dark:bg-background text-foreground dark:text-foreground h-[5000px]`}>
+        <Header />  
+        {children}
+        <Darkmode />
+      </body>
     </html>
   );
 }
