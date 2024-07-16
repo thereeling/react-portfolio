@@ -4,51 +4,38 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { links } from "@/lib/links";
+import { Terminal } from "lucide-react";
 
 export function Header() {
   return (
     <motion.header
-      className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none sm:shadow-md sm:border sm:border-input sm:top-6 sm:h-[3.25] sm:w-[36rem] sm:rounded-md"
-      initial={{ y: -100, x: "-50%", opacity: 0 }}
-      animate={{ y: 0, x: "-50%", opacity: 1 }}
+      className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-sm"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
     >
-      <div className="container flex h-16 items-center sm:justify-center justify-end px-4 md:px-6 border-opacity-40">
-        <nav className="text-muted-foreground hidden items-center gap-7 sm:flex">
-          <Link
-            href="#home"
-            className="text-md font-medium transition-colors hover:text-foreground focus:text-foreground focus:underline"
-            prefetch={false}
-          >
-            Home
-          </Link>
-          <Link
-            href="#about"
-            className=" text-md font-medium transition-colors hover:text-foreground focus:text-foreground focus:underline"
-            prefetch={false}
-          >
-            About
-          </Link>
-          <Link
-            href="#projects"
-            className="text-md font-medium transition-colors hover:text-foreground focus:text-foreground focus:underline"
-            prefetch={false}
-          >
-            Projects
-          </Link>
-          <Link
-            href="#experience"
-            className="text-md font-medium transition-colors hover:text-foreground focus:text-foreground focus:underline"
-            prefetch={false}
-          >
-            Experience
-          </Link>
-          <Link
-            href="#contact"
-            className="text-md font-medium transition-colors hover:text-foreground focus:text-foreground focus:underline"
-            prefetch={false}
-          >
-            Contact
-          </Link>
+      <div className="container flex h-16 items-center justify-between md:px-6 border-opacity-40">
+        <Link
+          href="#"
+          className="flex items-center gap-1 text-lg font-bold text-primary"
+          prefetch={false}
+        >
+          <Terminal />  Nick Giuliani
+        </Link>
+        <nav>
+          <ul className="text-muted-foreground hidden items-center gap-7 sm:flex">
+            {links.map((link) => (
+              <li key={link.hash}>
+                <Link
+                  href={link.hash}
+                  className="text-sm font-medium transition-colors hover:text-foreground focus:text-foreground focus:underline"
+                  prefetch={false}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </nav>
         <Sheet>
           <SheetTrigger asChild>
@@ -58,43 +45,19 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="md:hidden">
-            <div className="grid gap-4 p-4">
-              <Link
-                href="#home"
-                className="text-sm font-medium transition-colors hover:text-primary focus:text-foreground focus:underline"
-                prefetch={false}
-              >
-                Home
-              </Link>
-              <Link
-                href="#about"
-                className="text-sm font-medium transition-colors hover:text-primary focus:text-foreground focus:underline"
-                prefetch={false}
-              >
-                About
-              </Link>
-              <Link
-                href="#projects"
-                className="text-sm font-medium transition-colors hover:text-primary focus:text-foreground focus:underline"
-                prefetch={false}
-              >
-                Projects
-              </Link>
-              <Link
-                href="#experience"
-                className="text-sm font-medium transition-colors hover:text-primary focus:text-foreground focus:underline"
-                prefetch={false}
-              >
-                Experience
-              </Link>
-              <Link
-                href="#contact"
-                className="text-sm font-medium transition-colors hover:text-primary focus:text-foreground focus:underline"
-                prefetch={false}
-              >
-                Contact
-              </Link>
-            </div>
+            <ul className="grid gap-4 p-4">
+              {links.map((link) => (
+                <li key={link.hash}>
+                  <Link
+                    href={link.hash}
+                    className="text-sm font-medium transition-colors hover:text-primary focus:text-foreground focus:underline"
+                    prefetch={false}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </SheetContent>
         </Sheet>
       </div>
