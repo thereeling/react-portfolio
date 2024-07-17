@@ -9,26 +9,25 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <motion.section className="w-full py-20 md:py-24 lg:py-32"
-          initial={{ opacity: 0, y:100 }}
-          animate={{ opacity: 1, y:0 }}
+    <motion.section
+      className="w-full py-20 md:py-24 lg:py-32"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
     >
       <div className="container grid items-center justify-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-12">
-        <div className="flex flex-col justify-center space-y-4">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              Nick Giuliani
-            </h1>
-            <h2 className="text-xl font-medium text-muted-foreground sm:text-2xl md:text-3xl">
-              Software Developer
-            </h2>
-            <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-              fermentum metus eu suscipit volutpat. Curabitur bibendum nunc in
-              augue rutrum posuere. Nulla vestibulum sit amet libero in posuere.
-            </p>
-          </div>
-          <div className="flex justify-start gap-6 min-[400px]:flex-row">
+        <div className="space-y-4">
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+            Nick Giuliani
+          </h1>
+          <h2 className="text-xl font-medium text-muted-foreground sm:text-2xl md:text-3xl">
+            Software Developer
+          </h2>
+          <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            fermentum metus eu suscipit volutpat. Curabitur bibendum nunc in
+            augue rutrum posuere. Nulla vestibulum sit amet libero in posuere.
+          </p>
+          <div className="flex flex-wrap gap-6 min-[400px]:flex-row">
             <Button variant="default">
               <Link href="#contact" prefetch={false}>
                 Contact Me
@@ -65,6 +64,8 @@ export default function Hero() {
         </div>
         <img
           src="/placeholder.svg"
+          width="100%"
+          height="400"
           alt="Hero"
           className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
         />
