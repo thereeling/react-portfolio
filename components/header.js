@@ -16,11 +16,11 @@ export function Header() {
     >
       <div className="container flex h-16 items-center justify-between md:px-6 border-opacity-40">
         <Link
-          href="#"
+          href="#home"
           className="flex items-center gap-1 text-lg font-bold text-primary"
           prefetch={false}
         >
-          <Terminal />  Nick Giuliani
+          <Terminal /> Nick Giuliani
         </Link>
         <nav>
           <ul className="text-muted-foreground hidden items-center gap-7 sm:flex">
