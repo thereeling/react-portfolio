@@ -1,7 +1,7 @@
 import { Header } from "@/components/header";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Darkmode } from "@/components/Darkmode";
+import { Darkmode } from "@/components/dark-mode";
 
 const inter = Inter({ subsets: ["latin"] });
 
