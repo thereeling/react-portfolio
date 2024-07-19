@@ -6,7 +6,7 @@
 
 [x] Separator
 
-[] About(?)
+[x] About(?)
 
 [] Experience
 
