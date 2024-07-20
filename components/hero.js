@@ -64,9 +64,7 @@ export default function Hero() {
         </div>
         <img
           src="/placeholder.svg"
-          width="100%"
-          height="400"
-          alt="Hero"
+          alt="Hero Image"
           className="mx-auto aspect-square overflow-hidden rounded-xl object-cover"
         />
       </div>

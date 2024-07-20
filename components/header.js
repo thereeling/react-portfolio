@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { links } from "@/lib/links";
+import { links } from "@/lib/data";
 import { Terminal } from "lucide-react";
 
 export function Header() {
