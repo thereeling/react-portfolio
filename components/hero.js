@@ -1,15 +1,17 @@
 "use client";
 
 import React from "react";
-
+import { useSectionInView } from "@/lib/hooks";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { ArrowDownToLine, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const { ref } = useSectionInView("Home");
   return (
     <motion.section
+      ref={ref}
       className="w-full py-20 md:py-24 lg:py-32"
       id="home"
       initial={{ opacity: 0, y: 100 }}

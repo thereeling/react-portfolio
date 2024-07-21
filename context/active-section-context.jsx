@@ -2,15 +2,18 @@
 
 import React, { useState, createContext, useContext } from "react";
 
- export const ActiveSectionContext = createContext(null);
+export const ActiveSectionContext = createContext(null);
 
 export default function ActiveSectionContextProvider({ children }) {
   const [activeSection, setActiveSection] = useState("Home");
+  const [timeOfLastClick, setTimeOfLastCLick] = useState(0);
   return (
     <ActiveSectionContext.Provider
       value={{
         activeSection,
         setActiveSection,
+        timeOfLastClick,
+        setTimeOfLastCLick,
       }}
     >
       {children}
