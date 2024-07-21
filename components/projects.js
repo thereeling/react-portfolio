@@ -5,7 +5,7 @@ import Project from "./project";
 
 export default function Projects() {
   return (
-    <section className="w-full py-20 md:py-24 lg:py-32">
+    <section className="w-full py-20 md:py-24 lg:py-32" id="projects">
       <div className="container grid gap-8 px-4 md:px-6">
         <SectionHeading>Projects</SectionHeading>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

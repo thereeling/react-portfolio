@@ -1,14 +1,19 @@
 "use client";
-
+import React from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function AboutMe() {
+  const { ref, entry } = useSectionInView("About");
   return (
-    <motion.section className="container py-20 rounded-lg"
-    initial={{ opacity: 0, y: 100 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.175 }}
+    <motion.section
+      ref={entry}
+      className="container py-20 rounded-lg"
+      id="about"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
     >
       <div className="grid gap-4">
         <div>

@@ -6,8 +6,11 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { links } from "@/lib/data";
 import { Terminal } from "lucide-react";
+import clsx from "clsx";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export function Header() {
+const { activeSection, setActiveSection } = useActiveSectionContext(); 
   return (
     <motion.header
       className="fixed top-0 z-50 w-full bg-background/80 backdrop-blur-sm"
@@ -17,6 +20,7 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between md:px-6 border-opacity-40">
         <Link
           href="#home"
+          onClick={() => setActiveSection('Home')}
           className="flex items-center gap-1 text-lg font-bold text-primary"
           prefetch={false}
         >
@@ -28,7 +32,13 @@ export function Header() {
               <li key={link.hash}>
                 <Link
                   href={link.hash}
-                  className="text-sm font-medium transition-colors hover:text-foreground focus:text-foreground focus:underline"
+                  onClick={() => setActiveSection(link.name)}
+                  className={clsx(
+                    "text-sm font-medium transition-colors hover:text-foreground",
+                    {
+                      "text-foreground underline": activeSection === link.name,
+                    }
+                  )}
                   prefetch={false}
                 >
                   {link.name}

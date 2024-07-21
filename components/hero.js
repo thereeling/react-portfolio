@@ -11,6 +11,7 @@ export default function Hero() {
   return (
     <motion.section
       className="w-full py-20 md:py-24 lg:py-32"
+      id="home"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
     >
