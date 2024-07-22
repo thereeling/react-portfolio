@@ -7,7 +7,7 @@ import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
-  const { ref } = useSectionInView("Projects")
+  const { ref } = useSectionInView("Projects", 0.90)
   return (
     <section ref={ref} className="w-full py-20 md:py-24 lg:py-32" id="projects">
       <div className="container grid gap-8 px-4 md:px-6">
