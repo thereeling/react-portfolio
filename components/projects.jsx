@@ -5,11 +5,20 @@ import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.9);
+
   return (
-    <section ref={ref} className="w-full py-20" id="projects">
+    <motion.section
+      ref={ref}
+      className="w-full py-20"
+      id="projects"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.200 }}
+    >
       <div className="container grid gap-8">
         <div>
           <SectionHeading>Projects</SectionHeading>
@@ -22,6 +31,6 @@ export default function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

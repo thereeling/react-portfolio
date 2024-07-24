@@ -1,6 +1,6 @@
 "use client";
 
-import { React, useRef } from "react";
+import { React } from "react";
 import {
   Card,
   CardContent,
@@ -12,24 +12,11 @@ import {
 import Link from "next/link";
 import { AppWindow, Github } from "lucide-react";
 import { Button } from "./ui/button";
-import { useScroll, motion, useTransform } from "framer-motion";
 
 export default function Project({ title, description, githubURL, projectURL }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+
   return (
-    <motion.section
-      ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-    >
+    <section>
       <Card className="group relative overflow-hidden rounded-lg border border-input transition-all duration-200 hover:shadow-lg hover:scale-[1.01]">
         {projectURL !== "" ? (
           <Link
@@ -88,6 +75,6 @@ export default function Project({ title, description, githubURL, projectURL }) {
           </div>
         </CardContent>
       </Card>
-    </motion.section>
+    </section>
   );
 }
