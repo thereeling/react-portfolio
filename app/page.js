@@ -3,6 +3,7 @@ import MotionSeparator from "@/components/motion-separator";
 import AboutMe from "@/components/about-me";
 import Projects from "@/components/projects";
 import Experience from "@/components/experience";
+import { EmailForm } from "@/components/email-form";
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
       <Projects />
       <MotionSeparator />
       <Experience />
+      <MotionSeparator />
+      <EmailForm />
     </main>
   );
 }
