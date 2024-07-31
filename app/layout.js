@@ -1,10 +1,10 @@
 import { Header } from "@/components/header";
-import { Inter } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Darkmode } from "@/components/dark-mode";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto_Mono({ subsets: ["latin"], display: "swap", });
 
 export const metadata = {
   title: "Nick Giuliani",
@@ -13,9 +13,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" className={`${roboto.className} !scroll-smooth`}>
       <body
-        className={`${inter.className} bg-background dark:bg-background text-foreground dark:text-foreground h-[5000px]`}
+        className={`bg-background dark:bg-background text-foreground dark:text-foreground h-[5000px]`}
       >
         <ActiveSectionContextProvider>
           <Header />
