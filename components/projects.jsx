@@ -5,7 +5,8 @@ import SectionHeading from "./section-heading";
 import { projectsData } from "@/lib/data";
 import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.9);
@@ -17,7 +18,7 @@ export default function Projects() {
       id="projects"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.200 }}
+      transition={{ delay: 0.2 }} 
     >
       <div className="container grid gap-8">
         <div>
