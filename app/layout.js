@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${roboto.className} !scroll-smooth`}>
       <body
-        className={`bg-background dark:bg-background text-foreground dark:text-foreground h-[5000px]`}
+        className={`bg-background dark:bg-background text-foreground dark:text-foreground`}
       >
         <ActiveSectionContextProvider>
           <Header />

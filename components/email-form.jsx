@@ -5,6 +5,8 @@ import { Button } from "./ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+import { Textarea } from "./ui/textarea";
+
 import {
   Form,
   FormControl,
@@ -33,6 +35,9 @@ const formSchema = z.object({
 });
 
 export function EmailForm() {
+
+
+  
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,7 +52,7 @@ export function EmailForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 space-y-8">
         <FormField
           control={form.control}
           name="email"
@@ -56,12 +61,11 @@ export function EmailForm() {
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
-                  maxlength="50"
+                  maxLength="50"
                   placeholder="youremail@domain.com"
                   {...field}
                 />
               </FormControl>
-              <FormDescription>Your Email</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -73,9 +77,8 @@ export function EmailForm() {
             <FormItem>
               <FormLabel>Subject</FormLabel>
               <FormControl>
-                <Input maxlength="50" placeholder="Subject" {...field} />
+                <Input maxLength="50" placeholder="Subject" {...field} />
               </FormControl>
-              <FormDescription>Subject</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -87,9 +90,8 @@ export function EmailForm() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Input maxlength="250" placeholder="Your message" {...field} />
+                <Textarea maxLength="250" placeholder="Your message" {...field} />
               </FormControl>
-              <FormDescription>Subject</FormDescription>
               <FormMessage />
             </FormItem>
           )}
