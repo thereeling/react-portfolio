@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "./ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
@@ -9,7 +8,6 @@ import { Textarea } from "./ui/textarea";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "./ui/input";
 import { sendEmail } from "@/actions/sendEmail";
+import SubmitButton from "./submit-button";
 
 const formSchema = z.object({
   email: z
@@ -35,7 +34,6 @@ const formSchema = z.object({
 });
 
 export function EmailForm() {
-
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -105,7 +103,7 @@ export function EmailForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <SubmitButton />
       </form>
     </Form>
   );
