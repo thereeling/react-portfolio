@@ -8,10 +8,10 @@ import Link from "next/link";
 
 export default function EmailSection() {
   return (
-    <section className="container grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">
+    <section id="contact" className="container grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">
       <div className="space-y-8">
         <SectionHeading>Contact</SectionHeading>
-        <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        <p className="max-w-[600px] text-muted-foreground md:text-m/relaxed lg:text-base/relaxed xl:text-m/relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
           fermentum metus eu suscipit volutpat. Curabitur bibendum nunc in augue
           rutrum posuere. Nulla vestibulum sit amet libero in posuere.
