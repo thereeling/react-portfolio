@@ -16,6 +16,9 @@ import {
 import { Input } from "./ui/input";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitButton from "./submit-button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Check, CircleX } from "lucide-react";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
   email: z
@@ -34,7 +37,6 @@ const formSchema = z.object({
 });
 
 export function EmailForm() {
-
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,7 +50,31 @@ export function EmailForm() {
       <form
         className="flex flex-col gap-4 space-y-8"
         action={async (formData) => {
-          await sendEmail(formData);
+          const { data, error } = await sendEmail(formData);
+          if (error) {
+            toast.error(error)
+           /* toast.custom((t) => {
+              <Alert
+                className={`${t.visible ? 'animate-enter' : 'animate-leave'}`}
+              >
+                <CircleX className="h-4 w-4" />
+                <AlertTitle>There has been an error...</AlertTitle>
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>;
+            }); */
+            return;
+          }
+          toast.custom((t) => {
+            <Alert
+              className={`${t.visible ? 'animate-enter' : 'animate-leave'}`}
+            >
+              <Check className="h-4 w-4" />
+              <AlertTitle>Success!</AlertTitle>
+              <AlertDescription>
+                Your Email has been successfully sent. Thanks for reaching out!
+              </AlertDescription>
+            </Alert>;
+          });
         }}
       >
         <FormField

@@ -3,8 +3,10 @@ import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { Darkmode } from "@/components/dark-mode";
 import ActiveSectionContextProvider from "@/context/active-section-context";
+import { Toaster } from "react-hot-toast";
+import ToastProvider from "@/components/toast-provider";
 
-const roboto = Roboto_Mono({ subsets: ["latin"], display: "swap", });
+const roboto = Roboto_Mono({ subsets: ["latin"], display: "swap" });
 
 export const metadata = {
   title: "Nick Giuliani",
@@ -17,11 +19,13 @@ export default function RootLayout({ children }) {
       <body
         className={`bg-background dark:bg-background text-foreground dark:text-foreground`}
       >
-        <ActiveSectionContextProvider>
-          <Header />
-          {children}
-        </ActiveSectionContextProvider>
-        <Darkmode />
+        <ToastProvider>
+          <ActiveSectionContextProvider>
+            <Header />
+            {children}
+          </ActiveSectionContextProvider>
+          <Darkmode />
+        </ToastProvider>
       </body>
     </html>
   );

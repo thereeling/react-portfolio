@@ -29,17 +29,23 @@ export const sendEmail = async (formData) => {
       error: "Invalid subject",
     };
   }
+
+  let data;
+
   try {
-    await resend.emails.send({
-      from: "Portfolio Contact Form <onboarding@resend.dev>",
+    data = await resend.emails.send({
+      from: "Portfolio Contact Form <onboarding@resend.com>",
       to: fromEmail,
       subject: `Message from contact form: ${subject}`,
       reply_to: email,
-      react: <ContactFormEmail message={message} email={email} />
+      react: <ContactFormEmail message={message} email={email} />,
     });
   } catch (error) {
     return {
       error: error.message,
     };
   }
+  return {
+    data,
+  };
 };
