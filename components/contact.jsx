@@ -6,7 +6,7 @@ import { Github } from "lucide-react";
 import { Linkedin } from "lucide-react";
 import Link from "next/link";
 
-export default function EmailSection() {
+export default function Contact() {
   return (
     <section id="contact" className="container grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4">
       <div className="space-y-8">

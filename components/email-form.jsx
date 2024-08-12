@@ -6,8 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
-import { useState } from "react";
-
 import {
   Form,
   FormControl,
@@ -18,6 +16,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "./ui/input";
+import { sendEmail } from "@/actions/sendEmail";
 
 const formSchema = z.object({
   email: z
@@ -36,6 +35,8 @@ const formSchema = z.object({
 });
 
 export function EmailForm() {
+
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,7 +47,12 @@ export function EmailForm() {
   });
   return (
     <Form {...form}>
-      <form className="flex flex-col gap-4 space-y-8">
+      <form
+        className="flex flex-col gap-4 space-y-8"
+        action={async (formData) => {
+          await sendEmail(formData);
+        }}
+      >
         <FormField
           control={form.control}
           name="email"
