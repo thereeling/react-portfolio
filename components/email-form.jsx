@@ -17,8 +17,9 @@ import { Input } from "./ui/input";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitButton from "./submit-button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Check, CircleX } from "lucide-react";
-import toast from "react-hot-toast";
+import { Check, Frown } from "lucide-react";
+import { toast } from "react-hot-toast";
+import { AnimatePresence, motion } from "framer-motion";
 
 const formSchema = z.object({
   email: z
@@ -52,29 +53,45 @@ export function EmailForm() {
         action={async (formData) => {
           const { data, error } = await sendEmail(formData);
           if (error) {
-            toast.error(error)
-           /* toast.custom((t) => {
-              <Alert
-                className={`${t.visible ? 'animate-enter' : 'animate-leave'}`}
-              >
-                <CircleX className="h-4 w-4" />
-                <AlertTitle>There has been an error...</AlertTitle>
-                <AlertDescription>{error}</AlertDescription>
-              </Alert>;
-            }); */
+            toast.custom((t) => (
+              <AnimatePresence>
+                {t.visible && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 100 }}
+                  >
+                    <Alert variant="destructive">
+                      <Frown className="h-4 w-4" />
+                      <AlertTitle>Something went wrong...</AlertTitle>
+                      <AlertDescription>{error}</AlertDescription>
+                    </Alert>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            ));
             return;
           }
-          toast.custom((t) => {
-            <Alert
-              className={`${t.visible ? 'animate-enter' : 'animate-leave'}`}
-            >
-              <Check className="h-4 w-4" />
-              <AlertTitle>Success!</AlertTitle>
-              <AlertDescription>
-                Your Email has been successfully sent. Thanks for reaching out!
-              </AlertDescription>
-            </Alert>;
-          });
+          toast.custom((t) => (
+            <AnimatePresence>
+              {t.visible && (
+                <motion.div
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 100 }}
+                >
+                  <Alert>
+                    <Check className="h-4 w-4" />
+                    <AlertTitle>Success!</AlertTitle>
+                    <AlertDescription>
+                      Your Email has been successfully sent. Thanks for reaching
+                      out!
+                    </AlertDescription>
+                  </Alert>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          ));
         }}
       >
         <FormField

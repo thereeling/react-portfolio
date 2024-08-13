@@ -4,7 +4,6 @@ import "./globals.css";
 import { Darkmode } from "@/components/dark-mode";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
-import ToastProvider from "@/components/toast-provider";
 
 const roboto = Roboto_Mono({ subsets: ["latin"], display: "swap" });
 
@@ -19,13 +18,12 @@ export default function RootLayout({ children }) {
       <body
         className={`bg-background dark:bg-background text-foreground dark:text-foreground`}
       >
-        <ToastProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
-          </ActiveSectionContextProvider>
-          <Darkmode />
-        </ToastProvider>
+        <ActiveSectionContextProvider>
+          <Header />
+          <Toaster position="bottom-left" reverseOrder={false} />
+          {children}
+        </ActiveSectionContextProvider>
+        <Darkmode />
       </body>
     </html>
   );
