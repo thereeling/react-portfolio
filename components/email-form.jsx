@@ -97,7 +97,6 @@ export function EmailForm() {
         <FormField
           control={form.control}
           name="email"
-          id="email"
           required
           render={({ field }) => (
             <FormItem>
@@ -116,7 +115,6 @@ export function EmailForm() {
         <FormField
           control={form.control}
           name="subject"
-          id="subject"
           required
           render={({ field }) => (
             <FormItem>
@@ -131,7 +129,6 @@ export function EmailForm() {
         <FormField
           control={form.control}
           name="message"
-          id="message"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Message</FormLabel>
