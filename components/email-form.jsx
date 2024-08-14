@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
+import { useForm, useFormState } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
 import {
   Form,
@@ -16,28 +15,12 @@ import {
 import { Input } from "./ui/input";
 import { sendEmail } from "@/actions/sendEmail";
 import SubmitButton from "./submit-button";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Check, Frown } from "lucide-react";
-import { toast } from "react-hot-toast";
-import { AnimatePresence, motion } from "framer-motion";
 
-const formSchema = z.object({
-  email: z
-    .string()
-    .email({ message: "Must use a valid Email Address" })
-    .min(2)
-    .max(50),
-  subject: z
-    .string()
-    .min(5, { message: "Subject must have a minumum of 5 characters." })
-    .max(50),
-  message: z
-    .string()
-    .min(10, { message: "Email content must have a minumum of 10 characters." })
-    .max(250),
-});
+import { motion } from "framer-motion";
+import { formSchema } from "@/lib/schemas";
 
 export function EmailForm() {
+  const [state, formAction] = useFormState(action, { errors: [] });
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,58 +29,17 @@ export function EmailForm() {
       message: "",
     },
   });
+
+
   return (
     <Form {...form}>
       <form
         className="flex flex-col gap-4 space-y-8"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-          if (error) {
-            toast.custom((t) => (
-              <AnimatePresence>
-                {t.visible && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 100 }}
-                  >
-                    <Alert variant="destructive">
-                      <Frown className="h-4 w-4" />
-                      <AlertTitle>Something went wrong...</AlertTitle>
-                      <AlertDescription>{error}</AlertDescription>
-                    </Alert>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            ));
-            return;
-          }
-          toast.custom((t) => (
-            <AnimatePresence>
-              {t.visible && (
-                <motion.div
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 100 }}
-                >
-                  <Alert>
-                    <Check className="h-4 w-4" />
-                    <AlertTitle>Success!</AlertTitle>
-                    <AlertDescription>
-                      Your Email has been successfully sent. Thanks for reaching
-                      out!
-                    </AlertDescription>
-                  </Alert>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          ));
-        }}
+        action={form.sendEmail}
       >
         <FormField
           control={form.control}
           name="email"
-          required
           render={({ field }) => (
             <FormItem>
               <FormLabel>Email</FormLabel>
@@ -115,7 +57,6 @@ export function EmailForm() {
         <FormField
           control={form.control}
           name="subject"
-          required
           render={({ field }) => (
             <FormItem>
               <FormLabel>Subject</FormLabel>
