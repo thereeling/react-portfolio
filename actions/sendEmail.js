@@ -7,14 +7,13 @@ import { formSchema } from "@/lib/schemas";
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 
-export const sendEmail = async (_prevState, formData) => {
-  const validation = formSchema.safeParse({
-    email: formData.get("email"),
-    message: formData.get("message"),
-    subject: formData.get("subject"),
-  });
+export const sendEmail = async (formData) => {
+  const result = formSchema.safeParse(formData);
+  const email = result.data.email;
+  const subject = result.data.subject;
+  const message = result.data.message;
   let data;
-  if (validation.success) {
+  if (result.success) {
     try {
       data = await resend.emails.send({
         from: "Portfolio Contact Form <onboarding@resend.dev>",
@@ -33,7 +32,7 @@ export const sendEmail = async (_prevState, formData) => {
     };
   } else {
     return {
-      errors: validation.error.issues,
-    }
+      errors: result.error.issues,
+    };
   }
 };
