@@ -5,11 +5,11 @@ import SectionHeading from "./section-heading";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function AboutMe() {
-  const { ref } = useSectionInView("About", 0.90);
+  const { ref } = useSectionInView("About");
   return (
     <motion.section
       ref={ref}
-      className="container py-20 rounded-lg"
+      className="mb-28 sm:mb-40 container py-20 rounded-lg"
       id="about"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}

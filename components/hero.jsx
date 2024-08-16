@@ -8,11 +8,11 @@ import { ArrowDownToLine, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const { ref } = useSectionInView("Home");
+  const { ref } = useSectionInView("Home", 0.5);
   return (
     <motion.section
       ref={ref}
-      className="w-full py-20 md:py-24 lg:py-32"
+      className="mb-28 sm:mb-40 w-full py-20 md:py-24 lg:py-32"
       id="home"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}

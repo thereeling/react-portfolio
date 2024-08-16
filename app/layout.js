@@ -4,6 +4,7 @@ import "./globals.css";
 import { Darkmode } from "@/components/dark-mode";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
+import { Footer } from "@/components/footer";
 
 const roboto = Roboto_Mono({ subsets: ["latin"], display: "swap" });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           {children}
         </ActiveSectionContextProvider>
         <Darkmode />
+        <Footer />
       </body>
     </html>
   );

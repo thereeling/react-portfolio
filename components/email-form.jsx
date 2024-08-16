@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, useFormState } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Textarea } from "./ui/textarea";
 import {
   Form,
@@ -14,10 +14,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "./ui/input";
 import { sendEmail } from "@/actions/sendEmail";
-import { motion } from "framer-motion";
 import { formSchema } from "@/lib/schemas";
 import { SuccessAlert, ErrorAlert } from "./alerts";
 import { Button } from "./ui/button";
+
 export function EmailForm() {
   const [buttonDisabled, setButtonDisabled] = React.useState(false);
   const form = useForm({
@@ -87,6 +87,7 @@ export function EmailForm() {
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
+                  className="h-52"
                   maxLength="250"
                   placeholder="Your message"
                   {...field}

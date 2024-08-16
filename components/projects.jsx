@@ -9,12 +9,12 @@ import { motion } from "framer-motion";
 
 
 export default function Projects() {
-  const { ref } = useSectionInView("Projects", 0.9);
+  const { ref } = useSectionInView("Projects", 0.90);
 
   return (
     <motion.section
       ref={ref}
-      className="w-full py-20"
+      className="mb-28 sm:mb-40 w-full py-20"
       id="projects"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}

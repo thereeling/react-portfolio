@@ -3,16 +3,16 @@
 import React from "react";
 import SectionHeading from "./section-heading";
 import { experienceData } from "@/lib/data";
-import { useScroll, motion, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 
 export default function Experience() {
-  const { ref } = useSectionInView("Experience", 1);
+  const { ref } = useSectionInView("Experience", 0.80);
   return (
     <motion.div
       ref={ref}
       id="experience"
-      className="container py-20"
+      className="mb-28 sm:mb-40 container py-20"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.225 }}

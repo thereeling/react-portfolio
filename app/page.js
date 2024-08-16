@@ -9,11 +9,8 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <MotionSeparator />
       <AboutMe />
-      <MotionSeparator />
       <Projects />
-      <MotionSeparator />
       <Experience />
       <MotionSeparator />
       <Contact />
