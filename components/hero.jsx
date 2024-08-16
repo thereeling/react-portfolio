@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { ArrowDownToLine, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -20,7 +21,13 @@ export default function Hero() {
       <div className="container grid items-center justify-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-12">
         <div className="space-y-4">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Nick Giuliani
+            <TypeAnimation
+              sequence={["Nick", 1000, "Giuliani", 1000, "Nick Giuliani", 1000]}
+              cursor={false}
+              wrapper="span"
+              speed={50}
+              repeat={1}
+            />
           </h1>
           <h2 className="text-xl font-medium text-muted-foreground sm:text-2xl md:text-3xl">
             Software Developer
